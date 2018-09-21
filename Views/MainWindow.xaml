@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:avalonia_test2.ViewModels;assembly=avalonia_test2"
+        Icon="resm:avalonia_test2.Assets.avalonia-logo.ico"
+        Title="avalonia_test2" WindowState="Maximized">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  
+  <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>     -->
+    
+    <Grid RowDefinitions="Auto, *" Background="Red">
+      <Button Grid.Row="0" Content="Add" Command="{Binding Add}"/>
+      <ListBox Grid.Row="1" Items="{Binding LiveMathes}" HorizontalAlignment="Left">
+          <ListBox.ItemTemplate>
+              <DataTemplate>
+                  <Border BorderBrush="Black" BorderThickness="1" Width="100">
+                      <Grid RowDefinitions="Auto,Auto,Auto">
+                          <TextBlock Grid.Row="0" Text="{Binding Name}"/>
+                          <TextBlock Grid.Row="1" Text="{Binding CurrentTime}"/>
+                          <Button Grid.Row="2" Content="Next" Command="{Binding NextState}"/>
+                      </Grid>
+                  </Border>
+              </DataTemplate>
+          </ListBox.ItemTemplate>
+      </ListBox>
+  </Grid>
+  
+</Window>
