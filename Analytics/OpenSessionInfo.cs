@@ -1,4 +1,4 @@
-﻿namespace avalonia_test2.Analytics
+﻿namespace Avalonia_test.Analytics
 {
     public sealed class OpenSessionInfo
     {

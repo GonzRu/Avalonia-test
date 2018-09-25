@@ -4,9 +4,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using avalonia_test2.ViewModels;
+using Avalonia_test.ViewModels;
 
-namespace avalonia_test2
+namespace Avalonia_test
 {
     public class ViewLocator : IDataTemplate
     {

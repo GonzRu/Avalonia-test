@@ -1,11 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="clr-namespace:avalonia_test2.ViewModels;assembly=avalonia_test2"
-        Icon="resm:avalonia_test2.Assets.avalonia-logo.ico"
+        xmlns:viewModels="clr-namespace:Avalonia_test.ViewModels"
         Title="avalonia_test2" WindowState="Maximized">
 
   <Design.DataContext>
-    <vm:MainWindowViewModel/>
+    <viewModels:MainWindowViewModel/>
   </Design.DataContext>
   
   <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>     -->

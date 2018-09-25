@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace avalonia_test2.Analytics
+namespace Avalonia_test.Analytics
 {
     public class LiveMatch
     {

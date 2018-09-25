@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reactive.Linq;
-using avalonia_test2.Analytics;
+using Avalonia_test.Analytics;
 using ReactiveUI;
 
-namespace avalonia_test2.ViewModels
+namespace Avalonia_test.ViewModels
 {
     public partial class MainWindowViewModel
     {

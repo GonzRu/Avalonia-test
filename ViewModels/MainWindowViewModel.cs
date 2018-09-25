@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using avalonia_test2.Analytics;
+using Avalonia_test.Analytics;
 using ReactiveUI;
 
-namespace avalonia_test2.ViewModels
+namespace Avalonia_test.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {

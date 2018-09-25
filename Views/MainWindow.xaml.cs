@@ -1,8 +1,7 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace avalonia_test2.Views
+namespace Avalonia_test.Views
 {
     public class MainWindow : Window
     {

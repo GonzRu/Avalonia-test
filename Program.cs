@@ -1,10 +1,9 @@
-﻿using System;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Logging.Serilog;
-using avalonia_test2.ViewModels;
-using avalonia_test2.Views;
+using Avalonia_test.ViewModels;
+using Avalonia_test.Views;
 
-namespace avalonia_test2
+namespace Avalonia_test
 {
     class Program
     {

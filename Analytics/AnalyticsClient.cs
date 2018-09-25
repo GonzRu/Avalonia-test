@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace avalonia_test2.Analytics
+namespace Avalonia_test.Analytics
 {
     public static class AnalyticsClient
     {
