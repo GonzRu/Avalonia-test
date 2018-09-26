@@ -24,7 +24,7 @@ namespace Avalonia_test.ViewModels
         private async void InitAsync()
         {
             await AnalyticsClient.OpenSessionAsync();
-            
+
             Observable.Timer(TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(5))
                 .Subscribe(SendLiveMatches);
         }
@@ -50,7 +50,7 @@ namespace Avalonia_test.ViewModels
                 State = x.State,
                 StartedAt = x.StartedAt,
             }).ToArray();
-            await AnalyticsClient.SendMatches(liveMatches);
+            await AnalyticsClient.UpdateSessionAsync(liveMatches);
         }
     }
 }

@@ -4,7 +4,7 @@
         Title="avalonia_test2" WindowState="Maximized">
 
   <Design.DataContext>
-    <viewModels:MainWindowViewModel/>
+<!--    <viewModels:MainWindowViewModel/>-->
   </Design.DataContext>
   
   <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>     -->

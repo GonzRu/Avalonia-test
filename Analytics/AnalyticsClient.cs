@@ -9,13 +9,16 @@ namespace Avalonia_test.Analytics
 {
     public static class AnalyticsClient
     {
-        private const string Url = "http://localhost:5000";
+        private const string Url = "http://localhost:55315/";
         
         private static HttpClient HttpClient = new HttpClient();
+        private static Dictionary<string, object> _sessionProperties = new Dictionary<string, object>();
 
         static AnalyticsClient()
         {
             HttpClient.DefaultRequestHeaders.Add("ApiKey", "LiveCenter-Test");
+            
+            _sessionProperties.Add("Login", "test");
         }
         
         public static async Task OpenSessionAsync()
@@ -30,9 +33,30 @@ namespace Avalonia_test.Analytics
                     }), Encoding.UTF8, "application/json")).ConfigureAwait(false);
 
                 response.EnsureSuccessStatusCode();
+            }
+            catch (Exception e)
+            {
+            }
+        }
 
-//                _timer = new Timer(Callback, null, TimeSpan.FromSeconds(UpdateSessionInterval), TimeSpan.FromSeconds(UpdateSessionInterval));
-//                _timer2 = new Timer(Callback2, null, TimeSpan.FromSeconds(UpdateMatchesInterval), TimeSpan.FromSeconds(UpdateMatchesInterval));
+        public static async Task UpdateSessionAsync(ICollection<LiveMatch> mathes)
+        {
+            try
+            {
+                var updateSessionInfo = new UpdateSessionInfo()
+                {
+                    ClientHash = "test",
+                    Properties = JsonConvert.SerializeObject(_sessionProperties),
+                    Matches = JsonConvert.SerializeObject(mathes),
+                };
+
+                var response = await HttpClient.PostAsync(
+                        requestUri: new Uri(new Uri(Url), "api/analytics/updatesession"),
+                        content: new StringContent(JsonConvert.SerializeObject(updateSessionInfo), Encoding.UTF8,
+                            "application/json"))
+                    .ConfigureAwait(false);
+
+                response.EnsureSuccessStatusCode();
             }
             catch (Exception e)
             {
